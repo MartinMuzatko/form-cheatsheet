@@ -1,0 +1,38 @@
+.padding-vertical(@amount: 2em) {
+    padding-top: @amount;
+    padding-bottom: @amount;
+}
+
+.padding-horizontal(@amount: 5%) {
+    padding-left: @amount;
+    padding-right: @amount;
+}
+
+.shadow(@size: .5em, @color: @color-dark-shadow) {
+    box-shadow: 0 0 @size @color;
+}
+
+.responsiveWidth(@width) {
+    @media screen and (min-width: @breakpoint-sm) {
+        width: calc(@breakpoint-sm * (min(1, min(@width + .2, 1))) ~'- 1em');
+    }
+    @media screen and (min-width: @breakpoint-md) {
+        width: calc(@breakpoint-md * (min(1, min(@width + .05, 1))) ~'- 1em');
+    }
+    @media screen and (min-width: @breakpoint-lg) {
+        width: calc(@breakpoint-lg * @width ~'- 1em');
+    }
+}
+
+.responsiveHeight(@height) {
+    min-height: @height * .5;
+    @media screen and (min-width: @breakpoint-sm) {
+        min-height: @height * .7;
+    }
+    @media screen and (min-width: @breakpoint-md) {
+        min-height: @height * .85;
+    }
+    @media screen and (min-width: @breakpoint-lg) {
+        min-height: @height;
+    }
+}
